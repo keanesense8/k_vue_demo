@@ -16,12 +16,9 @@ export default new Router({
       component: () => import('./views/About.vue')
     },
     {
-      path: '/catagory',
-      children: [{
-        path: '/nba',
-        name: 'nba',
-        component: () => import('./views/catagory/Nba.vue')
-      }]
+      path: '/nba',
+      name: 'nba',
+      component: () => import('./views/catagory/Nba.vue')
     }
   ]
 })
