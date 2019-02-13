@@ -32,9 +32,9 @@ export default {
         routerto: "nba"
       },
       {
-        icon: "subscriptions",
-        text: "Subscriptions",
-        routerto: "/catagory/nba"
+        icon: "video",
+        text: "VideoJs",
+        routerto: "videojs"
       },
       { icon: "history", text: "History", routerto: "/catagory/nba" },
       {
