@@ -5,8 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'home',
       component: Home
@@ -14,7 +13,15 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/catagory',
+      children: [{
+        path: '/nba',
+        name: 'nba',
+        component: () => import('./views/catagory/Nba.vue')
+      }]
     }
   ]
 })

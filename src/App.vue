@@ -1,32 +1,25 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <router-link to="/" class="text-decoration:none">
-         <v-btn color="success">Success</v-btn>
-      </router-link>  
-      <router-link to="/About">
-          <v-btn color="success">Success</v-btn>
-       </router-link>
-    </v-toolbar>
+  <v-app id="inspire" light>
+    <sidebar></sidebar>
+    <topbar></topbar>
 
     <v-content>
+      <h1>Content</h1>
       <router-view/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import topbar from "@/views/Top";
+import sidebar from "@/views/Side";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  },
-  data () {
-    return {
-      //
-    }
+    topbar,
+    sidebar
   }
-}
+};
 </script>
