@@ -1,10 +1,14 @@
 <template>
   <v-toolbar color="white" dense fixed clipped-left app>
     <v-toolbar-side-icon @click.stop="sideIconClick"></v-toolbar-side-icon>
-    <v-icon class="mx-3">fab fa-youtube</v-icon>
+    <!-- <v-icon class="mx-3 color=red">fab fa-youtube</v-icon>
     <v-toolbar-title class="mr-5 align-center cursor-pointer" @click="home">
       <span class="title">Youtube</span>
-    </v-toolbar-title>
+    </v-toolbar-title>-->
+    <div class="w-32 ml-10 cursor-pointer" @click="home">
+      <v-img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></v-img>
+    </div>
+
     <v-spacer></v-spacer>
     <v-layout row style="max-width: 900px" justify-space-around>
       <v-text-field
