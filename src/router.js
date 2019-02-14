@@ -11,14 +11,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue')
-    },
-    {
       path: '/nba',
       name: 'nba',
       component: () => import('./views/catagory/Nba.vue')
+    },
+    {
+      path: '/play/:id',
+      name: 'play',
+      component: () => import('./components/PlayPage.vue')
     }
   ]
 })

@@ -4,7 +4,6 @@
     <topbar></topbar>
 
     <v-content>
-      
       <router-view/>
     </v-content>
   </v-app>
@@ -16,7 +15,7 @@ import sidebar from "@/views/Side";
 
 export default {
   name: "App",
-  
+
   components: {
     topbar,
     sidebar

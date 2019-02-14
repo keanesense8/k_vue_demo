@@ -2,7 +2,7 @@
   <v-toolbar color="white" dense fixed clipped-left app>
     <v-toolbar-side-icon @click.stop="sideIconClick"></v-toolbar-side-icon>
     <v-icon class="mx-3">fab fa-youtube</v-icon>
-    <v-toolbar-title class="mr-5 align-center">
+    <v-toolbar-title class="mr-5 align-center cursor-pointer" @click="home">
       <span class="title">Youtube</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
@@ -42,6 +42,9 @@ export default {
       console.log(this.$store.state.drawer);
       this.$store.state.drawer = !this.$store.state.drawer;
       return this.$store.state.drawer;
+    },
+    home() {
+      this.$router.push("/nba");
     }
   }
 };

@@ -29,19 +29,10 @@ export default {
       {
         icon: "fa-baseball-ball",
         text: "NBA SPORTS",
-        routerto: "nba"
-      },
-      {
-        icon: "video",
-        text: "VideoJs",
-        routerto: "videojs"
-      },
-      { icon: "history", text: "History", routerto: "/catagory/nba" },
-      {
-        icon: "featured_play_list",
-        text: "Playlists",
-        routerto: "/catagory/nba"
+        routerto: "/nba"
       }
+
+      // { icon: "history", text: "Play Demo", routerto: "/play" }
     ]
   }),
   computed: {
