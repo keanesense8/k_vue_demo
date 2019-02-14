@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     catagoryAction(index) {
-      console.log(this.items[index].routerto);
+      // console.log(this.items[index].routerto);
       this.$router.push(this.items[index].routerto);
     },
     setting() {

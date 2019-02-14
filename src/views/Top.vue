@@ -39,7 +39,7 @@
 export default {
   methods: {
     sideIconClick() {
-      console.log(this.$store.state.drawer);
+      // console.log(this.$store.state.drawer);
       this.$store.state.drawer = !this.$store.state.drawer;
       return this.$store.state.drawer;
     },
