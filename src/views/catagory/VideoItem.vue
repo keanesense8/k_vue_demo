@@ -5,7 +5,7 @@
   >
     <img
       class="w-full"
-      src="https://hd-report.com/wp-content/uploads/2017/06/nba-logo-16.9.jpg"
+      :src="poster"
       alt="Test"
     >
     <div class="px-6 py-4">
@@ -19,13 +19,16 @@
 export default {
   name: "VideoItem",
   props: {
-    code: String
+    code: String,
+    poster: String,
+    type: Number
   },
   methods: {
     itemClick() {
-      // console.log("click");
-      const goto = "play/" + this.code;
-      this.$router.push(goto);
+      console.log("click "+ this.type);
+      let goto = "play/" + this.code + "/" + (this.type === 1 ? "live" : "vod");
+      console.log("goto:" + goto)
+      this.$router.push(goto );
     }
   }
 };

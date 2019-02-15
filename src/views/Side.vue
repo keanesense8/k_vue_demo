@@ -28,8 +28,12 @@ export default {
     items: [
       {
         icon: "fa-baseball-ball",
-        text: "NBA SPORTS",
+        text: "NBA LIVE",
         routerto: "/nba"
+      }, {
+        icon: "ondemand_video",
+        text: "Vod",
+        routerto: "/vod"
       }
 
       // { icon: "history", text: "Play Demo", routerto: "/play" }

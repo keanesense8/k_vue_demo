@@ -1,26 +1,29 @@
 <template>
-  <ul class="list-reset">
-    <li>
-      <h1>Channel:{{$route.params.id}}</h1>
-    </li>
-    <li>
-      <div class="w-4/5">
-        <video-player
-          class="video-player-box vjs-big-play-centered"
-          ref="videoPlayer"
-          :playsinline="true"
-          :options="playerOptions"
-          @play="onPlayerPlay($event)"
-          @pause="onPlayerPause($event)"
-        ></video-player>
-      </div>
-    </li>
-    <li>
-      <div class="w-4/5 mt-2">
-        <v-text-field label="PlayUrl" outline placeholder :value="url"></v-text-field>
-      </div>
-    </li>
-  </ul>
+  <div class="pl-20">
+    <ul class="list-reset">
+      <li>
+        <h1>Channel:{{$route.params.id}}</h1>
+      </li>
+      <li>
+        <div class="w-4/5">
+          <video-player
+            class="video-player-box vjs-big-play-centered"
+            ref="videoPlayer"
+            :playsinline="true"
+            :options="playerOptions"
+            @play="onPlayerPlay($event)"
+            @pause="onPlayerPause($event)"
+          ></video-player>
+        </div>
+      </li>
+
+      <li>
+        <div class="w-4/5 mt-2">
+          <v-text-field label="PlayUrl" outline placeholder :value="url"></v-text-field>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 // console.log("router:" + this.$router);
@@ -30,7 +33,18 @@
 export default {
   data: function() {
     // console.log("init data " + this.$store.state.drawer);
+    // console.log("init data " + this.$route.path);
     // console.log("init data " + this.$route.params.id);
+    let path = this.$route.path;
+    let src = path.endsWith("vod")
+      ? "http://61.8.173.88/vod/" + this.$route.params.id + "/prime.m3u8"
+      : "http://61.8.173.88/live/hd" +
+        this.$route.params.id +
+        "/workflow02/workflow02-mnf.m3u8";
+
+    let poster = path.endsWith("vod")
+      ? "https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-p2s7ks8k5a40s64t7qs88f2jn6-20170827130016.Medi.jpeg"
+      : "https://cdn.nba.net/nba-drupal-prod/2017-08/SEO-image-NBA-logoman.jpg";
     // let playerOptions =
     return {
       playerOptions: {
@@ -46,14 +60,11 @@ export default {
           {
             type: "application/x-mpegURL",
             // src: "http://61.8.173.54/live/hddfws/1300000/mnf.m3u8" //你的m3u8地址（必填）
-            src:
-              "http://61.8.173.88/live/hd" +
-              this.$route.params.id +
-              "/workflow01/workflow01-mnf.m3u8"
+            src: src
           }
         ],
-        poster:
-          "https://cdn.nba.net/nba-drupal-prod/2017-08/SEO-image-NBA-logoman.jpg" //你的封面地址
+        poster: poster
+        //你的封面地址
         // width: document.documentElement.clientWidth,
         // notSupportedMessage: "此视频暂无法播放，请稍后再试" //允许覆盖Video.js无法播放媒体源时显示的默认信息。
       }
@@ -63,7 +74,7 @@ export default {
 
   mounted() {
     this.initPlayUrl();
-    console.log("this is current player instance object", this.player);
+    // console.log("this is current player instance object", this.player);
   },
   computed: {
     player() {
