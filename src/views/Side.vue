@@ -32,7 +32,7 @@ export default {
         routerto: "/nba"
       }, {
         icon: "ondemand_video",
-        text: "Vod",
+        text: "VOD",
         routerto: "/vod"
       }
 

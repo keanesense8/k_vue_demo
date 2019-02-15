@@ -116,7 +116,7 @@ export default {
       return this.$store.state.drawer;
     },
     home() {
-      this.$router.push("/nba");
+      this.$router.push("/");
     }
   }
 };
