@@ -10,8 +10,7 @@ export default new Router({
 			path: '*',
 			name: 'NotFound',
 			component: () =>
-				import(/* webpackChunkName: "routes" */
-				`@/views/NotFound.vue`)
+				import('./views/NotFound.vue')
 		},
 		{
 			path: '/',
